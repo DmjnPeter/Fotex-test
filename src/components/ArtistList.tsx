@@ -1,6 +1,6 @@
-import {Grid, CircularProgress, Container} from '@mui/material';
+import { Grid, CircularProgress, Container } from '@mui/material';
 import ArtistCard from './ArtistCard';
-import { useArtists } from '@/hooks/useArtist';
+import { useArtists } from '../hooks/useArtist';
 import { useSearchParams } from 'next/navigation';
 
 interface Artist {
@@ -12,9 +12,12 @@ interface Artist {
 
 const ArtistList = () => {
     const searchParams = useSearchParams();
-    const params = Object.fromEntries(searchParams);
+    const params = searchParams ? Object.fromEntries(searchParams) : {};
+
+
     const { data, isLoading } = useArtists(params);
 
+    // Show loading indicator while fetching data
     if (isLoading) {
         return <CircularProgress />;
     }
@@ -31,8 +34,7 @@ const ArtistList = () => {
             </Grid>
           ))}
         </Grid>
-      );
-    };
+    );
+};
 
-
-    export default ArtistList;
+export default ArtistList;
