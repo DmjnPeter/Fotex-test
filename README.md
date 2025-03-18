@@ -118,7 +118,7 @@ Az előadókat további paraméterek alapján lehet szűrni (Filters.tsx).
 
 
 
-7. Jövőbeli fejlesztési lehetőségek
+6. Jövőbeli fejlesztési lehetőségek
 
 Keresés optimalizálása
 
