@@ -1,36 +1,128 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Hungaroton Artist List 
 
-## Getting Started
+1. Projekt áttekintése
 
-First, run the development server:
+A Hungaroton Artist List egy webalkalmazás, amely segít a felhasználóknak előadókat keresni és megtekinteni a kapcsolódó albumokat. Az alkalmazás React és Next.js alapon készült, Material-UI komponensekkel és egyedi stílusokkal.
 
-```bash
+
+
+2. Használt technológiák
+
+Frontend: Next.js, React, TypeScript
+
+UI: Material-UI
+
+Adatkezelés: REST API hívások
+
+Stílus: CSS, Material-UI SX
+
+Fejlesztési eszközök: Node.js, npm
+
+
+
+3. Telepítés és futtatás
+
+
+3.1. Telepítés
+
+Projekthez navigálás:
+
+cd hungaroton-artist-list
+
+Függőségek telepítése:
+
+npm install
+
+
+3.2. Fejlesztési szerver indítása
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+A szerver alapértelmezés szerint a http://localhost:3000 címen fut.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+4. Fájlstruktúra
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+ cypress/
+ ├── e2e/
+ |   ├── search.cy.js
+ ├── fixtures/
+ ├── support/
+ ├── tsconfig.json
+ hungaroton-artist-list/
+ ├── src/
+ │   ├── app/
+ │   │   ├── layout.tsx
+ │   │   ├── page.tsx
+ │   ├── components/
+ │   │   ├── ArtistCard.tsx
+ │   │   ├── ArtistList.tsx
+ │   │   ├── Filters.tsx
+ │   │   ├── Pagination.tsx
+ │   ├── hooks/
+ │   │   ├── useArtists.ts
+ │   │   ├── useDebounce.ts
+ │   ├── pages/
+ │   ├── services/
+ │   ├── ├──__tests__/
+ │   │   ├──  ├──api.test.ts
+ │   │   ├── api.ts
+ │   ├── styles/
+ │   │   ├── globals.css
+ │   ├── themes/
+ │   │   ├── theme.ts
+ │   ├── next.config.js
+ │   ├── tsconfig.json
+ │   ├── package.json
+ │   ├── jest.config.js
+ │   ├── Fotexnet Homework.postman_collection.json
+ ├── node_modules/
+ ├── src/
+ │   ├── amplifyconfiguration.json
+ │   ├── aws-exports.tsx
+ ├── .dockerignore
+ ├── .gitignore
+ ├── cypress.config.ts
+ ├── Dockerfile
+ ├── package-lock.json
+ ├── package.json
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+5. Funkcionalitás
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+5.1. Előadók listázása
+
+Az alkalmazás az API-ból szerzi be az előadók listáját.
+
+Minden előadó kártya formájában jelenik meg (ArtistCard.tsx).
+
+
+5.2. Keresés előadó neve alapján
+
+A TextField komponens segítségével lehet keresni az előadók között.
+
+A keresés dinamikusan szűri az eredményeket.
+
+
+5.3. Lapozás (Pagination)
+
+Ha több előadó van, mint ami egy oldalon megjeleníthető, a felhasználó lapozhat köztük.
+
+
+5.4. Szűrők
+
+Az előadókat további paraméterek alapján lehet szűrni (Filters.tsx).
+
+
+
+7. Jövőbeli fejlesztési lehetőségek
+
+Keresés optimalizálása
+
+További szűrők bevezetése.
+
+Reszponzív dizájn továbbfejlesztése.
+
